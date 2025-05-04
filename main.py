@@ -292,9 +292,9 @@ if __name__ == "__main__":
     simulator = InterviewSimulator()
     
     result = simulator.run_simulation(
-        resume_path="data/steve.txt",
+        resume_path="data/jake.txt",
         job_description_path="data/flyio.txt",
-        output_dir="interview_output_steve_flyio"
+        output_dir="interview_output_jake_flyio"
     )
 
     print(f"Interview simulation completed!")
