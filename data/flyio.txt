@@ -1,0 +1,41 @@
+Platform Engineer: Fly Machines
+Level: senior
+
+We’re building something ambitious at Fly.io: a new public cloud, running on our own hardware all over the world, built to make it easy to run apps close to users everywhere.
+
+Fly Machines are containers running under hardware virtualization in our cloud. They’re so lightweight that, once created, they can be stopped and clean-started fast enough to respond to an incoming HTTP request. Unlike “function-as-a-service” platforms, they don’t have time budgets: you can run a Fly Machine for the duration of a single request, or for weeks or months.
+
+The Fly platform connects Fly Machines to an Anycast network routing traffic into over 30 regions on all but one (guess) continent. There’s no load balancers to set up or network rules to write: you launch a Fly Machine and you’re live, worldwide, immediately.
+
+We think they’re pretty neat, and we’re looking for people to work with us on them.
+
+This Role
+We’re looking for engineers to join the team working on Fly Machines and their orchestrator, flyd.
+
+Most of this is Golang code. It has an elegant structure. On thousands of beefy “worker” servers in our fleet, each flyd is solely responsible for its own state — every server is the source of truth for its own workloads, without a global top-down orchestrator. Under the hood, flyd is a specialized database server that durably tracks the steps in a series of fine state machines, like “create a Fly Machine” or “cordon off an existing Fly Machine”.
+
+Fly Machines connect up with our network infrastructure, which is written primarily in Rust, through a state distribution system called Corrosion, which is an open source project you can check out for yourself.
+
+If you’re ambitious, you can also check out our infra-log to see every way this can go wrong, because being right in the middle of all this is the job you’d be signing up for.
+
+What We’re Doing Now
+Fly Machines are making a beeline towards enabling two big internal use cases for us.
+
+The first is MPG, our upcoming Managed Postgres offering. Being a platform for managed database means being good both at managing compute resources and, especially, storage — and we’re chasing down a bunch of interesting ideas there. But more than anything else it involves making machines move, and improving and tooling up machine migration so we can transparently shuffle workloads.
+
+The second use case is LLM execution environments. A crazy thing happens when you give a hallucination-prone LLM access to a secure, ephemeral environment with which to actually compile and run code: the LLM actually gets good at coding. Making this work well for customers means giving Fly Machines safe access to APIs and secrets without exposing them to untrusted code, and managing gigantic pools of machines.
+
+We think these are fun problems. We can’t promise they won’t be stressful problems. If that’s a kind of bittersweet you’re interested in, let’s see if we’d work well together.
+
+How We Hire
+This is a senior, fully-remote, full-time position.
+
+In order to optimize for pay equity, Fly.io doesn’t negotiate salaries. We have standardized salaries for each employee level. The salary for this role is $190 to $225k USD, depending on level. We offer competitive equity grants with a long exercise window. We provide health care benefits, flexible vacation time (with a minimum), hardware/phone allowances, the standard stuff.
+
+Our hiring process may be a little different from what you’re used to. We respect career experience but we aren’t hypnotized by it, and we’re thrilled at the prospect of discovering new talent. So instead of resumes and interviews, we’re going to show you the kind of work we’re doing and then see if you enjoy actually doing it, with “work-sample challenges”. Unlike a lot of places that assign “take-home problems”, our challenges are the backbone of our whole process; they’re not pre-screeners for an interview gauntlet. (We’re happy to talk, though!)
+
+There’s more about us than you probably want to know at our hiring documentation.
+
+If you’re interested, mail jobs+platform-machines@fly.io. You can tell us a bit about yourself, if you like. Please also include your location (country), and your Github username, for work sample access.
+
+If you’re considering applying to multiple positions, please send separate emails for each one.
