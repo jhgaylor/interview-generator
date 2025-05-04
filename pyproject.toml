@@ -1,0 +1,13 @@
+[project]
+name = "voice-interview"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.50.0",
+    "dotenv>=0.9.9",
+    "elevenlabs>=1.57.0",
+    "pydub>=0.25.1",
+    "tenacity>=9.1.2",
+]
